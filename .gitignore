@@ -41,6 +41,10 @@
 *.dwo
 
 Images/*
+Labels/*
 .ai_meta/*
 understanding.md
-ai_ops.py
+DAVID_Description.pdf
+*.mp4
+checksums.sha512
+meta_kernel.py

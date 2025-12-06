@@ -66,6 +66,62 @@ flowchart TD
    python ai_ops.py check
    ```
 
+## Prerequisites
+- Python 3.9+
+- Packages: OpenCV (cv2), NumPy, PyYAML, tqdm
+- Windows PowerShell or compatible shell
+
+## Quick Start
+1. Create and activate your Python environment.
+2. Install dependencies:
+   ```powershell
+   pip install opencv-python numpy pyyaml tqdm
+   ```
+3. Configure `config.yaml` (see schema below).
+4. Run the pipeline:
+   ```powershell
+   python 3d_video_capture.py
+   ```
+
+## Configuration Schema (example)
+```yaml
+INPUT_DIR: "Images/Video_000"         # path to input frames
+OUTPUT_DIR: "Images/Video_000_processed" # path to write processed frames
+FILE_EXTENSION: "png"                 # input file extension
+SPATIAL_KERNEL_SIZE: 5                 # e.g., Gaussian blur kernel size
+OUTPUT_BIT_DEPTH: 8                    # 8 or 16
+NORM_ZERO_POINT: 0                     # normalization offset
+NORM_SCALE_FACTOR: 1.0                 # normalization scale
+MAX_WORKERS: 4                         # parallel workers
+```
+
+## Meta-Kernel (Automation Layer)
+Use the meta-kernel to scan, validate config, and check repo health.
+- Initialize:
+  ```powershell
+  python meta_kernel.py init
+  ```
+- Scan project:
+  ```powershell
+  python meta_kernel.py scan
+  ```
+- List tools:
+  ```powershell
+  python meta_kernel.py list_tools
+  ```
+- Run tools:
+  ```powershell
+  python meta_kernel.py run project_structure
+  python meta_kernel.py run config_validator
+  python meta_kernel.py run checksum_verifier
+  python meta_kernel.py run pipeline_profiler
+  ```
+
+## Notes
+- Ensure dataset usage complies with the license.
+- If processed directories (e.g., `Images/Video_XXX_processed`) are missing, verify `OUTPUT_DIR` and permissions.
+- For performance, prefer SSD storage and adjust `MAX_WORKERS` to your CPU cores.
+
 ## Video Dataset
 - Source: [mediatum.ub.tum.de/1596437](https://mediatum.ub.tum.de/1596437)
 - License: [Creative Commons Attribution 4.0 International (CC BY 4.0)](http://creativecommons.org/licenses/by/4.0)
