@@ -1,0 +1,9 @@
+# 3D Image Sequence Processing Configuration
+INPUT_DIR: Images/Video_005
+OUTPUT_DIR: Images/Video_005_processed
+FILE_EXTENSION: .png
+SPATIAL_KERNEL_SIZE: 5
+OUTPUT_BIT_DEPTH: 8
+NORM_ZERO_POINT: 127.5
+NORM_SCALE_FACTOR: 127.5
+MAX_WORKERS: null

@@ -39,3 +39,8 @@
 
 # debug information files
 *.dwo
+
+Images/*
+.ai_meta/*
+understanding.md
+ai_ops.py
