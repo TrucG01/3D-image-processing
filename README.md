@@ -95,28 +95,6 @@ NORM_SCALE_FACTOR: 1.0                 # normalization scale
 MAX_WORKERS: 4                         # parallel workers
 ```
 
-## Meta-Kernel (Automation Layer)
-Use the meta-kernel to scan, validate config, and check repo health.
-- Initialize:
-  ```powershell
-  python meta_kernel.py init
-  ```
-- Scan project:
-  ```powershell
-  python meta_kernel.py scan
-  ```
-- List tools:
-  ```powershell
-  python meta_kernel.py list_tools
-  ```
-- Run tools:
-  ```powershell
-  python meta_kernel.py run project_structure
-  python meta_kernel.py run config_validator
-  python meta_kernel.py run checksum_verifier
-  python meta_kernel.py run pipeline_profiler
-  ```
-
 ## Notes
 - Ensure dataset usage complies with the license.
 - If processed directories (e.g., `Images/Video_XXX_processed`) are missing, verify `OUTPUT_DIR` and permissions.
